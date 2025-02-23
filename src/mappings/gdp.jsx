@@ -1,14 +1,15 @@
 import * as d3 from "d3";
 
-const data = await d3.json("/data.json");
-const countries = data.countries;
+let countries = null
 
 let year = 2000;
 
 let percent_increases = null;
 let colorScale = null;
 
-function setYear(newYear) {
+function setYear(newYear, datasets) {
+  countries = datasets.data.countries
+
   year = newYear;
 
   percent_increases = {};

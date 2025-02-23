@@ -22,7 +22,9 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000 ? countries[country].years[year].outputs.GDP : undefined,
+          year >= 2000 && countries[country].years[year].outputs
+            ? countries[country].years[year].outputs.GDP
+            : undefined,
       };
     })
     .filter((year) => year.value !== undefined);
@@ -33,7 +35,7 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000
+          year >= 2000 && countries[country].years[year].outputs
             ? countries[country].years[year].outputs.unemployment
             : undefined,
       };
@@ -46,7 +48,9 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000 ? countries[country].years[year].outputs.HDI : undefined,
+          year >= 2000 && countries[country].years[year].outputs
+            ? countries[country].years[year].outputs.HDI
+            : undefined,
       };
     })
     .filter((year) => year.value !== undefined);
@@ -57,7 +61,9 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000 ? countries[country].years[year].outputs.le : undefined,
+          year >= 2000 && countries[country].years[year].outputs
+            ? countries[country].years[year].outputs.le
+            : undefined,
       };
     })
     .filter((year) => year.value !== undefined);
@@ -68,7 +74,9 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000 ? countries[country].years[year].outputs.psi : undefined,
+          year >= 2000 && countries[country].years[year].outputs
+            ? countries[country].years[year].outputs.psi
+            : undefined,
       };
     })
     .filter((year) => year.value !== undefined);
@@ -79,7 +87,7 @@ export default function CategoryAnalysis({ country, countries, structured }) {
       return {
         name: year,
         value:
-          year >= 2000
+          year >= 2000 && countries[country].years[year].outputs
             ? countries[country].years[year].outputs.energy
             : undefined,
       };

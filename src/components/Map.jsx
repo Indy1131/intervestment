@@ -1,12 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import * as d3 from "d3";
 import metrics from "../mappings/metrics";
 import Toolbar from "./Toolbar";
+import { DataContext } from "../views/Layout";
 
 const width = 5000;
 const height = 5000;
 
 export default function Map({ year, metric }) {
+  const datasets = useContext(DataContext);
+
   const [error, setError] = useState(null);
   const [country, setCountry] = useState(null);
   const [expanded, setExpanded] = useState(false);
@@ -29,7 +32,7 @@ export default function Map({ year, metric }) {
           .attr("height", height);
 
         const response = await d3.json("/world.json");
-        metrics[metric].setYear(year);
+        metrics[metric].setYear(year, datasets);
 
         const projection = d3
           .geoEquirectangular()
@@ -126,7 +129,7 @@ export default function Map({ year, metric }) {
         g.attr("transform", d3.zoomTransform(svg.node()));
         const zoom = d3
           .zoom()
-          .scaleExtent([.5, 3]) // Min and max zoom levels
+          .scaleExtent([0.5, 3]) // Min and max zoom levels
           .on("zoom", (event) => {
             g.attr("transform", event.transform); // Apply transformation
           });

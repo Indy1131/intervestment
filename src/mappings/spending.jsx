@@ -4,8 +4,7 @@ import Bar from "../components/Bar";
 // import Line from "../components/Line";
 // import CommonData from "../components/CommonData";
 
-const data = await d3.json("/data.json");
-const countries = data.countries;
+let countries = null;
 
 let year = 2000;
 let total_amounts = null;
@@ -13,7 +12,9 @@ let country_amounts = null;
 
 let colorScale = null;
 
-function setYear(newYear) {
+function setYear(newYear, datasets) {
+  countries = datasets.data.countries
+
   year = newYear;
 
   country_amounts = [];

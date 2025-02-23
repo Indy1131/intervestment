@@ -1,12 +1,13 @@
 import Line from "../components/Line";
 
-export default function ROIAnalysis({
-  country,
-  countries,
-  structured,
-  linreg,
-}) {
+export default function ROIAnalysis({ country, countries, structured }) {
   const incomeGroup = countries[country]["Income group"];
+
+  const linreg = Object.keys(structured)
+    .map((key) => {
+      return { ...structured[key], country: key };
+    })
+    .sort((a, b) => a.spending - b.spending);
 
   let real = 0;
   const spend = linreg

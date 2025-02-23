@@ -1,9 +1,6 @@
 import * as d3 from "d3";
 
-const data = await d3.json("/data.json");
-const countries = data.countries;
-
-const ROIs = await d3.json("/ROIs.json");
+let ROIs = null;
 
 // console.log(finalScores);
 
@@ -12,8 +9,8 @@ const colorScale = d3
   .domain([40, 65, 70, 85])
   .clamp(true);
 
-function setYear() {
-  return;
+function setYear(year, datasets) {
+  ROIs = datasets.ROIs;
 }
 
 function fill(d) {

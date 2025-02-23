@@ -1,22 +1,25 @@
 import * as d3 from "d3";
 
-const fitScores = await d3.json("/fitScores.json");
-const ROIs = await d3.json("/ROIs.json");
+let fitScores = null;
+let ROIs = null;
 
 const finalScores = {};
-
-Object.keys(fitScores).map((country) => {
-  const finalScore = (Number(fitScores[country]) + Number(ROIs[country])) / 2;
-  finalScores[country] = finalScore;
-  return finalScore;
-});
 
 const colorScale = d3
   .scaleLinear(["#b80f36", "#D29922", "#c9ac2a", "#3FBA50"])
   .domain([40, 65, 70, 90])
   .clamp(true);
 
-function setYear() {
+function setYear(year, datasets) {
+  fitScores = datasets.fitScores;
+  ROIs = datasets.ROIs;
+
+  Object.keys(fitScores).map((country) => {
+    const finalScore = (Number(fitScores[country]) + Number(ROIs[country])) / 2;
+    finalScores[country] = finalScore;
+    return finalScore;
+  });
+
   return;
 }
 
