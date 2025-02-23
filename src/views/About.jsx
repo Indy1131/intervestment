@@ -28,22 +28,25 @@ export default function About() {
       <h2 className="text-[50px] mt-[10px]">What can we do?</h2>
       <div className="backdrop mb-[50px] w-[700px] mt-[30px] box-border p-[40px] flex flex-col gap-[15px] text-[#9198A1]">
         <h1>We provide a way to visualize data.</h1>
-        <h2>
-          We detail the distribution of global statistics and U.S. foreign aid
-          spending patterns over time.
-        </h2>
-        <h2>
-          We analyze the latest national data, generating a Return on Investment
-          (ROI) score to reflect a nation's improvement relative to aid received
-        </h2>
-        <h2>
-          We generate Fit score to measure alignment with historical spending
-          patterns using deep learning
-        </h2>
-        <h2>
-          We create an aggregate score to determine a nation’s priority for
-          additional funding.
-        </h2>
+        <ul className="flex flex-col gap-[10px] list-disc">
+          <li>
+            We detail the distribution of global statistics and U.S. foreign aid
+            spending patterns over time.
+          </li>
+          <li>
+            We analyze the latest national data, generating a Return on
+            Investment (ROI) score to reflect a nation's improvement relative to
+            aid received
+          </li>
+          <li>
+            We generate Fit score to measure alignment with historical spending
+            patterns using deep learning
+          </li>
+          <li>
+            We create an aggregate score to determine a nation’s priority for
+            additional funding.
+          </li>
+        </ul>
       </div>
       <Link
         to="/map"
@@ -54,7 +57,7 @@ export default function About() {
 
       <h2 className="text-[50px] mt-[10px]">Bibliography</h2>
       <div className="backdrop mb-[50px] w-[700px] mt-[30px] box-border p-[40px] flex flex-col gap-[15px] text-[#9198A1]">
-        <h1 className="text-[20px]">The following datasets were used:</h1>
+        <h1>The following datasets were used:</h1>
         <h2>https://foreignassistance.gov/data</h2>
         <h2>
           https://wits.worldbank.org/CountryProfile/en/country/by-country/startyear/ltst/endyear/ltst/indicator/NY-GDP-MKTP-CD
