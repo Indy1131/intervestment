@@ -14,13 +14,13 @@ export default function Layout() {
       try {
         // Array of URLs to fetch (replace with your actual URLs)
         const urls = [
-          "http://localhost:3000/?name=data",
-          "http://localhost:3000/?name=fits",
-          "http://localhost:3000/?name=fitScores",
-          "http://localhost:3000/?name=global",
-          "http://localhost:3000/?name=inputs",
-          "http://localhost:3000/?name=ROIs",
-          "http://localhost:3000/?name=structured",
+          "https://intervestment-production.up.railway.app/?name=data",
+          "https://intervestment-production.up.railway.app/?name=fits",
+          "https://intervestment-production.up.railway.app/?name=fitScores",
+          "https://intervestment-production.up.railway.app/?name=global",
+          "https://intervestment-production.up.railway.app/?name=inputs",
+          "https://intervestment-production.up.railway.app/?name=ROIs",
+          "https://intervestment-production.up.railway.app/?name=structured",
         ];
 
         // Use Promise.all to fetch all files in parallel
