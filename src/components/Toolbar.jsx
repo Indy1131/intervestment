@@ -8,10 +8,8 @@ import FitAnalysis from "../toolbar/FitAnalysis";
 import DotLink from "./DotLink";
 
 import { DataContext } from "../views/Layout";
-3;
 
 // const data = await d3.json("/data.json");
-
 // const structured = await d3.json("/structured.json");
 // const fitScores = await d3.json("/fitScores.json");
 // const fits = await d3.json("/fits.json");

@@ -16,7 +16,7 @@ function setYear(newYear, datasets) {
   const all_increases = Object.keys(countries).map((country) => {
     if (
       !countries[country].years[year] 
-      // !countries[country].years[year - 1]
+      ||  !countries[country].years[year].outputs
     ) {
       return 0;
     } else {
