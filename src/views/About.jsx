@@ -58,15 +58,21 @@ export default function About() {
       <h2 className="text-[50px] mt-[10px]">Bibliography</h2>
       <div className="backdrop mb-[50px] w-[700px] mt-[30px] box-border p-[40px] flex flex-col gap-[15px] text-[#9198A1]">
         <h1>The following datasets were used:</h1>
-        <h2>https://foreignassistance.gov/data</h2>
-        <h2>
-          https://wits.worldbank.org/CountryProfile/en/country/by-country/startyear/ltst/endyear/ltst/indicator/NY-GDP-MKTP-CD
-        </h2>
-        <h2>https://ourworldindata.org/grapher/unemployment-rate?time=2022</h2>
-        <h2>https://ourworldindata.org/grapher/unemployment-rate?time=2022</h2>
-        <h2> https://ourworldindata.org/human-development-index</h2>
-        <h2>https://ourworldindata.org/life-expectancy</h2>
-        <h2>https://ourworldindata.org/energy-production-consumption</h2>
+        <ul className="flex flex-col gap-[10px] list-disc">
+          <li>https://foreignassistance.gov/data</li>
+          <li>
+            https://wits.worldbank.org/CountryProfile/en/country/by-country/startyear/ltst/endyear/ltst/indicator/NY-GDP-MKTP-CD
+          </li>
+          <li>
+            https://ourworldindata.org/grapher/unemployment-rate?time=2022
+          </li>
+          <li>
+            https://ourworldindata.org/grapher/unemployment-rate?time=2022
+          </li>
+          <li> https://ourworldindata.org/human-development-index</li>
+          <li>https://ourworldindata.org/life-expectancy</li>
+          <li>https://ourworldindata.org/energy-production-consumption</li>
+        </ul>
       </div>
     </div>
   );
